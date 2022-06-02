@@ -72,13 +72,6 @@ const storageConfig = multer.diskStorage({
   },
 });
 
-// Simulation d'un tableau de Base de données
-let allMatches = [
-  { id: 1, scoreOne: 1, scoreTwo: 2, teamOne: "RMD", teamTwo: "FCB" },
-  { id: 4, scoreOne: 2, scoreTwo: 0, teamOne: "SEV", teamTwo: "ATM" },
-  { id: 6, scoreOne: 1, scoreTwo: 1, teamOne: "JUV", teamTwo: "RMD" },
-  { id: 2, scoreOne: 0, scoreTwo: 3, teamOne: "AC", teamTwo: "ROM" },
-];
 
 // backendApp.HTTP-METHOD("/PATH", (req,res)=> {
 //    Instructions
