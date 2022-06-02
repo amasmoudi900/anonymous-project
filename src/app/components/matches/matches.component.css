@@ -1,0 +1,15 @@
+::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+.search-div {
+  position: absolute;
+  margin-top: -20%;
+  margin-left: 40%;
+}
+
+.search-input {
+  width: 350px;
+  color: white;
+}

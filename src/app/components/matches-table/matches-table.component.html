@@ -1,0 +1,34 @@
+<div class="container site-section">
+    <div class="widget-next-match">
+        {{title}}
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Score One</th>
+                    <th>Score Two</th>
+                    <th>Team One</th>
+                    <th>Team Two</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of pageOfItems">
+                    <td>{{match._id}}</td>
+                    <td><strong class="text-white">{{match.scoreOne}}</strong></td>
+                    <td>{{match.scoreTwo}}</td>
+                    <td>{{match.teamOne}}</td>
+                    <td>{{match.teamTwo}}</td>
+                    <td>
+                        <button class="btn btn-success" (click)="goToDisplay(match._id)">Display</button>
+                        <button class="btn btn-warning" (click)="goToEdit(match._id)">Edit</button>
+                        <button class="btn btn-danger" (click)="deleteMatchById(match._id)">Delete</button>
+                    </td>
+                </tr>
+                <jw-pagination [pageSize]="2" [items]="matches" (changePage)="onChangePage($event)"></jw-pagination>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 90b4e9e0-95ef-11eb-8fee-c576c3f38f70 -->

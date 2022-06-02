@@ -1,0 +1,40 @@
+<div class="container" style="margin-bottom: 150px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="d-flex team-vs">
+        <span class="score">
+          <span [ngClass]="{
+            'red': teamResult(X.scoreOne, X.scoreTwo) == 'red' , 
+            'green': teamResult(X.scoreOne, X.scoreTwo) == 'green' ,
+            'blue':teamResult(X.scoreOne, X.scoreTwo) == 'blue'
+          }">{{X.scoreOne}}</span>
+          -
+          <span [ngClass]="{
+            'red': teamResult(X.scoreTwo, X.scoreOne) == 'red' , 
+            'green': teamResult(X.scoreTwo, X.scoreOne) == 'green' ,
+            'blue':teamResult(X.scoreTwo, X.scoreOne) == 'blue'
+          }">{{X.scoreTwo}}</span>
+        </span>
+        <div class="team-1 w-50">
+          <div class="team-details w-100 text-center">
+            <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+            <h3>
+              <span [ngStyle]="{
+                'color': teamResult(X.scoreOne, X.scoreTwo)
+              }">{{X.teamOne}}</span>
+              <span>(win)</span>
+            </h3>
+          </div>
+        </div>
+        <div class="team-2 w-50">
+          <div class="team-details w-100 text-center">
+            <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+            <h3><span [ngStyle]="{
+              'color': teamResult(X.scoreTwo, X.scoreOne)
+            }">{{X.teamTwo}}</span> <span>(loss)</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

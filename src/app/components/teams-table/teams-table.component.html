@@ -1,0 +1,36 @@
+<form #searchForm="ngForm" (ngSubmit)="search()">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="obj.stadium" name="team" class="form-control"
+            placeholder="Insert team one/team two">
+    </div>
+    <div class="form-group text-center" >
+        <input type="submit" class="btn btn-primary py-3 px-5" value="Search">
+    </div>
+</form>
+
+<table class="table custom-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Foundation</th>
+            <th>Stadium</th>
+            <th *ngIf="isDisplayed">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of teams">
+            <td>{{team.id}}</td>
+            <td><strong class="text-white">{{team.name}}</strong></td>
+            <td>{{team.owner}}</td>
+            <td>{{team.foundation}}</td>
+            <td>{{team.stadium}}</td>
+            <td *ngIf="isDisplayed">
+                <button class="btn btn-success">Display</button>
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
